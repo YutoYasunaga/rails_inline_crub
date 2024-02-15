@@ -1,0 +1,5 @@
+= turbo_stream.replace(@staff) do
+  = render @staff
+  /= render partial: 'staffs/staff', locals: { staff: @staff }
+
+= turbo_stream.replace('flash', partial: 'partials/flash_message')

@@ -8,4 +8,9 @@ fi
 # Default to port 3000 if not specified
 export PORT="${PORT:-3000}"
 
+bundle
+rm -rf public/assets
+rm -rf public/vite-dev
+rm -rf public/vite-test
+kill -9 $(ps aux | grep '[p]uma' | awk '{print $2}')
 exec foreman start -f Procfile.dev "$@"
